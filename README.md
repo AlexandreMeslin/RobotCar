@@ -161,3 +161,8 @@ Opcionalmente, conecte o positivo (vermelho) do suporte da bateria no módulo de
 ### Código
 
 :warning: IMPORTANTE: antes de fazer upload do código, não se esqueça de desconectar os pinos TX e RX do shield. Eles estão conectados ao Bluetooth, que usa os mesmos pinos da interface serial USB. Lembre-se de reconectar para poder usar o carro.
+
+## Histórico
+
+- 2022-02-17b: Criação de um README (quase) descente.
+- 2002-02-17: Primeira versão com controle de versão.

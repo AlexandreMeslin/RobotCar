@@ -30,12 +30,12 @@ unsigned char carSpeed = 255;
 boolean movingForward = false;
 const int turningFactor = 70;    // unbalance factor to turn left or right, and move forward simultaneously
 // Left Motor
-const int motorEnLeft = 13;
+const int motorEnLeft = 5;
 const int motorInLeft1 = 3;
 const int motorInLeft2 = 2;
 // Right Motor
 const int motorEnRight = 6;
-const int motorInRight3 = 5;
+const int motorInRight3 = 13;
 const int motorInRight4 = 4;
 
 /*
@@ -233,7 +233,8 @@ void forward(void){
     digitalWrite(motorInRight3,LOW);
     digitalWrite(motorInRight4,HIGH);
   }
-  Serial.println("Forward");
+//  Serial.print("Forward: ");
+//  Serial.println(carSpeed, HEX);
 }
  
 void back(){
@@ -244,7 +245,7 @@ void back(){
   digitalWrite(motorInLeft2,HIGH);
   digitalWrite(motorInRight3,HIGH);
   digitalWrite(motorInRight4,LOW);
-  Serial.println("Back");
+//  Serial.println("Back");
 }
  
 void backLeft(void){
@@ -255,7 +256,7 @@ void backLeft(void){
   digitalWrite(motorInLeft2,HIGH);
   digitalWrite(motorInRight3,HIGH);
   digitalWrite(motorInRight4,LOW);
-  Serial.println("Back");
+//  Serial.println("Back");
 }
  
 void backRight(void){
@@ -266,7 +267,7 @@ void backRight(void){
   digitalWrite(motorInLeft2,HIGH);
   digitalWrite(motorInRight3,HIGH);
   digitalWrite(motorInRight4,LOW);
-  Serial.println("Back");
+//  Serial.println("Back");
 }
  
 void left(){
@@ -276,22 +277,22 @@ void left(){
   digitalWrite(motorInLeft2,HIGH);
   digitalWrite(motorInRight3,LOW);
   digitalWrite(motorInRight4,HIGH); 
-  Serial.println("Left");
+//  Serial.println("Left");
 }
  
 void forwardLeft(void){
     movingForward = true;
-//  if(distance < 20) {
-//    stopAll();
-//  } else {
+  if(distance < 20) {
+    stopAll();
+  } else {
     analogWrite(motorEnLeft,carSpeed * turningFactor / 100);
     analogWrite(motorEnRight,carSpeed);
     digitalWrite(motorInLeft1,HIGH);
     digitalWrite(motorInLeft2,LOW);
     digitalWrite(motorInRight3,LOW);
     digitalWrite(motorInRight4,HIGH);
-//  }
-  Serial.println("Left");
+  }
+//  Serial.println("Left");
 }
  
 void right(){
@@ -301,22 +302,22 @@ void right(){
   digitalWrite(motorInLeft2,LOW);
   digitalWrite(motorInRight3,HIGH);
   digitalWrite(motorInRight4,LOW);
-  Serial.println("Right");
+//  Serial.println("Right");
 }
  
 void forwardRight(){
   movingForward = true;
-//  if(distance < 20) {
-//    stopAll();
-//  } else {
+  if(distance < 20) {
+    stopAll();
+  } else {
     analogWrite(motorEnLeft,carSpeed);
     analogWrite(motorEnRight,carSpeed * turningFactor / 100);
     digitalWrite(motorInLeft1,HIGH);
     digitalWrite(motorInLeft2,LOW);
     digitalWrite(motorInRight3,LOW);
     digitalWrite(motorInRight4,HIGH);
-//  }
-  Serial.println("Right");
+  }
+//  Serial.println("Right");
 }
  
 void stopAll(){
@@ -325,7 +326,7 @@ void stopAll(){
   digitalWrite(motorEnLeft,LOW);
   digitalWrite(ledPinRearRight, HIGH);
   digitalWrite(ledPinRearLeft, HIGH);
-  Serial.println("Stop!");
+//  Serial.println("Stop!");
 }
 
 /**

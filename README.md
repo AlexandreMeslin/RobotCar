@@ -164,5 +164,6 @@ Opcionalmente, conecte o positivo (vermelho) do suporte da bateria no módulo de
 
 ## Histórico
 
+- 2022-08-01: Inclusão da câmera frontal no carro.
 - 2022-02-17b: Criação de um README (quase) descente.
 - 2002-02-17: Primeira versão com controle de versão.

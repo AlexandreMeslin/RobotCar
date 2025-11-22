@@ -1,5 +1,36 @@
 # RobotCar
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![Contributors](https://img.shields.io/github/contributors/AlexandreMeslin/RobotCar)
+![Open Issues](https://img.shields.io/github/issues/AlexandreMeslin/RobotCar)
+![Open PRs](https://img.shields.io/github/issues-pr/AlexandreMeslin/RobotCar)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![GitHub Created At](https://img.shields.io/github/created-at/AlexandreMeslin/RobotCar)
+
+![C++](https://img.shields.io/badge/language-C++-yellow.svg)
+![HTML](https://img.shields.io/badge/language-HTML-brown.svg)
+![C](https://img.shields.io/badge/language-C-green.svg)
+![Top Language](https://img.shields.io/github/languages/top/AlexandreMeslin/RobotCar)
+![Languages Count](https://img.shields.io/github/languages/count/AlexandreMeslin/RobotCar)
+
+![Last Commit](https://img.shields.io/github/last-commit/AlexandreMeslin/RobotCar)
+![Repo Size](https://img.shields.io/github/repo-size/AlexandreMeslin/RobotCar)
+![Code Size](https://img.shields.io/github/languages/code-size/AlexandreMeslin/RobotCar)
+![GitHub commits since tagged version](https://img.shields.io/github/commits-since/AlexandreMeslin/RobotCar/v2025.2)
+
+![GitHub stars](https://img.shields.io/github/stars/AlexandreMeslin/RobotCar?style=social)
+![GitHub forks](https://img.shields.io/github/forks/AlexandreMeslin/RobotCar?style=social)
+![GitHub followers](https://img.shields.io/github/followers/AlexandreMeslin)
+![GitHub User's stars](https://img.shields.io/github/stars/AlexandreMeslin)
+![GitHub watchers](https://img.shields.io/github/watchers/AlexandreMeslin/RobotCar)
+
+**Frameworks & Tools:**
+
+![VS-Code](https://img.shields.io/badge/VSCode-000000?style=flat-square&logo=vscode&logoColor=white)
+![Arduino IDE](https://img.shields.io/badge/Arduino%02IDE-2D3748?style=flat-square&logo=arquino%20ide&logoColor=white)
+![Plataformio](https://img.shields.io/badge/Plataformio-FF9900?style=flat-square&logo=plataformio&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05033?style=flat-square&logo=git&logoColor=white)
+
 Lista de material:
 
 - 1 Arduino Uno
@@ -21,6 +52,8 @@ Opcionais:
 - 2 LEDs vermelhos 5 mm
 - 4 resistores 220 ohms
 
+Veja também no [site](https://cursos.meslin.com.br/home/IoT/projetos-com-arduinoesp/carro-rob%C3%B4-com-arduino-mega).
+
 ## Errata
 
 Na conexão do motor: o pino 6 deve ser ligado ao ENA e o pino 13 ao IN4. Ambos, ENA e ENB devem ser ligados a saídas PWM.
@@ -30,6 +63,8 @@ Na conexão do motor: o pino 6 deve ser ligado ao ENA e o pino 13 ao IN4. Ambos,
 ### Montagem dos motores
 
 Solde os fios vermelhos e pretos nos quatro motores, criando quatro conjuntos iguais. Não existe problema de polaridade, uma vez que o carro irá andar para frente e para trás, ou seja, durante o funcionamento, haverá inversão natural de tensão. Apenas certifique-se de que todos os motores foram montados igualmente.
+
+![motores](imagens/CarroRobo_motores.png)
 
 Use um par de presilhas em cada motor para fixar o motor na parte de cima da placa do chassis inferior. As cabeças dos parafusos devem ficar voltadas para o lado de fora do carro enquanto que as porcas, para o lado de dentro.
 
@@ -76,6 +111,10 @@ Usando um cabo de quatro fios, conecte o sensor no shield como mostrado a seguir
 | Vcc       | V       |
 | Gnd       | G       |
 
+![Ultrasom versão Uno](imagens/CarroRobo_ultrasom.png)
+
+![Ultrasom versão Mega](imagens/CarroRoboMega_ultrasom.png)
+
 #### **Cabeamento do servo-motor**
 
 Alimentação:
@@ -97,6 +136,10 @@ O acrílico deve ser aparafusado em cima do motor usando a barra reta que vem co
 |   Vcc   |    V    |
 |   Gnd   |    G    |
 
+![Servo versão Uno](imagens/CarroRobo_servo.png)
+
+![Servo versão Mega](imagens/CarroRoboMega_servo.png)
+
 #### **Cabeamento do módulo Bluetooth:**
 
 Alimentação:
@@ -117,6 +160,10 @@ Prenda com uma gravatinha (ou um lacre de embalagem de pão) o módulo Bluetooth
 | TXD | RX |
 | VCC | V |
 | GND | G |
+
+![Bluetooth versão Uno](imagens/CarroRobo_bluetooth.png)
+
+![Bluetooth versão Mega](imagens/CarroRoboMega_bluetooth.png)
 
 #### **Cabeamento da ponte:**
 
@@ -141,6 +188,10 @@ Termine o cabeamento da ponte como mostrado a seguir (antes, retire os dois jump
 | IN4 | 13 |
 | ENB | 6 |
 
+![Ponte versão Uno](imagens/CarroRobo_ponte.png)
+
+![ponte versão Mega](imagens/CarroRoboMega_ponte.png)
+
 #### **Cabeamento da energia:**
 
 Conecte o fio vermelho da bateria em +12V da ponte.
@@ -149,7 +200,25 @@ Conecte o fio preto da bateria em GND da ponte. Nesse mesmo ponto, conecte um fi
 
 Conecte o fio vermelho de VCC da ponte até VCC do shield.
 
+![Energia versão Uno](imagens/CarroRobo_power.png)
+
+![Energia versão Mega](imagens/CarroRoboMega_power.png)
+
 Opcionalmente, conecte o positivo (vermelho) do suporte da bateria no módulo de potência através de uma chave liga-desliga.
+
+### Cabeamento completo
+
+Versão básica:
+
+![Cabeamento completo básico versão Uno](imagens/CarroRobo_basico.png)
+
+![Cabeamento completo básico versão Mega](imagens/CarroRoboMega_basico.png)
+
+Versão com opcionais:
+
+![Cabeamento completo com opcionais versão Uno](imagens/CarroRobo_bb.png)
+
+![Cabeamento completo com opcionais versão Mega](imagens/CarroRoboMega_bb.png)
 
 #### **Opcionais:**
 
